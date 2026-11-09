@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Control de pólizas{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="cabecera-contenido">
+            <h1>Corredora de Seguros Horizonte</h1>
+            <p class="fecha-corte">Control de pólizas · Fecha de corte {{ fecha_corte.strftime('%d/%m/%Y') if fecha_corte else '—' }}</p>
+        </div>
+    </header>
+
+    <div class="contenedor">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer class="pie">
+        Universidad Fundepos · Técnico en IA Empresarial · Módulo 2 · Datos ficticios
+    </footer>
+</body>
+</html>

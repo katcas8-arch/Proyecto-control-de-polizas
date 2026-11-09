@@ -1,0 +1,268 @@
+/* Diseño definido en AGENTS.md */
+:root {
+    --rojo: #AE1800;
+    --negro: #201E1D;
+    --gris-claro: #F3F2F2;
+    --gris-borde: #DDD;
+    --texto-gris: #555;
+    --blanco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--gris-claro);
+    color: var(--negro);
+    line-height: 1.5;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* ===== Cabecera ===== */
+.cabecera {
+    background-color: var(--rojo);
+    color: var(--blanco);
+    padding: 20px;
+    border-bottom: 4px solid var(--negro);
+}
+
+.cabecera-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cabecera h1 {
+    margin: 0 0 6px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.fecha-corte {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.95;
+}
+
+/* ===== Tarjetas de contadores ===== */
+.contadores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.tarjeta {
+    flex: 1 1 120px;
+    background: var(--blanco);
+    padding: 16px 12px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid var(--gris-borde);
+}
+
+.tarjeta h2 {
+    margin: 0 0 5px 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.tarjeta p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--texto-gris);
+}
+
+.tarjeta.vigente h2 { color: #2e7d32; }
+.tarjeta.por-vencer h2 { color: #e68a00; }
+.tarjeta.vencida h2 { color: var(--rojo); }
+
+/* ===== Botón descargar ===== */
+.acciones {
+    margin: 20px 0;
+}
+
+.boton-descargar {
+    display: inline-block;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.boton-descargar:hover {
+    background-color: #9c1400;
+    text-decoration: none;
+}
+
+/* ===== Paneles genéricos ===== */
+.panel {
+    background: var(--blanco);
+    padding: 18px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid var(--gris-borde);
+}
+
+.panel h2 {
+    margin-top: 0;
+    color: var(--negro);
+    border-bottom: 2px solid var(--rojo);
+    padding-bottom: 8px;
+    font-size: 18px;
+}
+
+/* ===== Listas ===== */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+/* ===== Tabla ===== */
+.tabla table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.tabla th,
+.tabla td {
+    padding: 8px 6px;
+    text-align: left;
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+.tabla th {
+    background-color: var(--gris-claro);
+    color: var(--negro);
+    font-weight: bold;
+    font-size: 12px;
+    position: sticky;
+    top: 0;
+}
+
+.tabla tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Filas por estado */
+.fila-estado-vencida {
+    background-color: #fdecea; /* rojo claro */
+}
+
+.fila-estado-por-vencer {
+    background-color: #fff3e0; /* ámbar claro */
+}
+
+/* Estados como texto */
+.estado-vigente { color: #2e7d32; font-weight: bold; }
+.estado-por-vencer { color: #e68a00; font-weight: bold; }
+.estado-vencida { color: var(--rojo); font-weight: bold; }
+
+/* Etiquetas especiales */
+.etiqueta {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 6px;
+    border-radius: 4px;
+    background-color: var(--gris-claro);
+    color: var(--negro);
+}
+
+/* Enlaces */
+a {
+    color: var(--rojo);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Pie de página ===== */
+.pie {
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    color: var(--texto-gris);
+    background-color: var(--gris-claro);
+    border-top: 1px solid var(--gris-borde);
+    margin-top: 20px;
+}
+
+/* ===== Celular ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .contenedor {
+        padding: 5px;
+    }
+
+    .cabecera {
+        padding: 15px;
+    }
+
+    .cabecera h1 {
+        font-size: 18px;
+    }
+
+    .fecha-corte {
+        font-size: 12px;
+    }
+
+    .contadores {
+        flex-direction: column;
+    }
+
+    .tarjeta {
+        flex: none;
+        width: 100%;
+    }
+
+    .panel {
+        padding: 12px;
+    }
+
+    .tabla table {
+        font-size: 11px;
+    }
+
+    .tabla th,
+    .tabla td {
+        padding: 6px 4px;
+    }
+
+    .boton-descargar {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+}
